@@ -43,5 +43,13 @@
 * 推しからのコメント集
 
 ## 機能の実装方針予定
-会員登録、ログイン→Google API
-タスク達成時のAIによるコメント表示→OpenAI API(GPT-4)
+* 会員登録、ログイン→Google API
+* タスク達成時のAIによるコメント表示→OpenAI API(GPT-4)
+
+## 使用予定の技術スタック
+* 開発環境：Docker
+* サーバサイド:Ruby on Rails 7.1.3・Ruby 3.3.1
+* フロントエンド:Ruby on Rails・JavaScript
+* CSSフレームワーク:Tailwind CSS
+* データベース:PostgreSQL
+* インフラ:Fly.io
