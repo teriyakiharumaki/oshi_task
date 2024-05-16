@@ -76,4 +76,4 @@ https://www.figma.com/design/jT5qXGIR3ucVM8cHhX61OO/Untitled?node-id=0%3A1&t=Hd5
 - [x] パスワード
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/dcb61c6ea2201a02ae84227f5585e118.png)](https://gyazo.com/dcb61c6ea2201a02ae84227f5585e118)
+[![Image from Gyazo](https://i.gyazo.com/c9be8a17a702535cc18d2cded37c8a20.png)](https://gyazo.com/c9be8a17a702535cc18d2cded37c8a20)
