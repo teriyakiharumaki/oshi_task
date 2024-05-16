@@ -74,3 +74,6 @@ https://www.figma.com/design/jT5qXGIR3ucVM8cHhX61OO/Untitled?node-id=0%3A1&t=Hd5
 ### メールアドレス・パスワード変更確認項目
 - [x] メールアドレス
 - [x] パスワード
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/dcb61c6ea2201a02ae84227f5585e118.png)](https://gyazo.com/dcb61c6ea2201a02ae84227f5585e118)
