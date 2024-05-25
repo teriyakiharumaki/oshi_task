@@ -33,3 +33,248 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 281ms (Views: 273.9ms | ActiveRecord: 0.0ms | Allocations: 85460)
 
 
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:28:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:30:27 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 202)
+  Rendered shared/_header.html.erb (Duration: 2.8ms | Allocations: 2426)
+  Rendered layout layouts/application.html.erb (Duration: 119.7ms | Allocations: 27864)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.0ms | Allocations: 31869)
+
+
+  
+ActionView::Template::Error (The asset "OshiTask_logo2.png" is not present in the asset pipeline.
+):
+    3:     <div class="flex justify-between items-center px-6 py-3">
+    4:       <div class="flex items-center">
+    5:         <%= link_to '/', class: 'flex items-center' do %>
+    6:           <%= image_tag 'OshiTask_logo2.png', class: 'h-16 w-auto' %>
+    7:         <% end %>
+    8:       </div>
+    9:       <div class="flex items-center">
+  
+app/views/shared/_header.html.erb:6
+app/views/shared/_header.html.erb:5
+app/views/layouts/application.html.erb:14
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:33:35 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.7ms | Allocations: 202)
+  Rendered shared/_header.html.erb (Duration: 1.6ms | Allocations: 826)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 134.7ms | Allocations: 27793)
+Completed 200 OK in 145ms (Views: 138.2ms | ActiveRecord: 0.0ms | Allocations: 31846)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:34:33 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 202)
+  Rendered shared/_header.html.erb (Duration: 2.4ms | Allocations: 826)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 244.5ms | Allocations: 37670)
+Completed 200 OK in 254ms (Views: 247.8ms | ActiveRecord: 0.0ms | Allocations: 41723)
+
+
+Started GET "/privacy" for 172.19.0.1 at 2024-05-25 14:34:45 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+Started GET "/terms" for 172.19.0.1 at 2024-05-25 14:34:45 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:35:45 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 202)
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 23089)
+Completed 200 OK in 82ms (Views: 76.3ms | ActiveRecord: 0.0ms | Allocations: 27143)
+
+
+Started GET "/terms" for 172.19.0.1 at 2024-05-25 14:35:48 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#terms as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/terms.html.erb within layouts/application
+  Rendered static_pages/terms.html.erb within layouts/application (Duration: 3.1ms | Allocations: 266)
+  Rendered shared/_header.html.erb (Duration: 2.5ms | Allocations: 519)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 2691)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 2986)
+
+
+Started GET "/privacy" for 172.19.0.1 at 2024-05-25 14:35:52 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy.html.erb within layouts/application
+  Rendered static_pages/privacy.html.erb within layouts/application (Duration: 2.2ms | Allocations: 136)
+  Rendered shared/_header.html.erb (Duration: 2.5ms | Allocations: 519)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2543)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 2837)
+
+
+Started GET "/contact" for 172.19.0.1 at 2024-05-25 14:35:55 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 2.0ms | Allocations: 98)
+  Rendered shared/_header.html.erb (Duration: 3.0ms | Allocations: 519)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2505)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 2799)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:35:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_header.html.erb (Duration: 2.9ms | Allocations: 519)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 2430)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 2661)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:39:26 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 234)
+  Rendered shared/_header.html.erb (Duration: 2.1ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 23138)
+Completed 200 OK in 78ms (Views: 72.2ms | ActiveRecord: 0.0ms | Allocations: 27192)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:40:15 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 231)
+  Rendered shared/_header.html.erb (Duration: 2.2ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 69.5ms | Allocations: 23087)
+Completed 200 OK in 79ms (Views: 72.8ms | ActiveRecord: 0.0ms | Allocations: 27141)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:43:25 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 203)
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 23140)
+Completed 200 OK in 79ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 27194)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:44:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+  Rendered shared/_header.html.erb (Duration: 2.0ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 69.8ms | Allocations: 23198)
+Completed 200 OK in 80ms (Views: 73.1ms | ActiveRecord: 0.0ms | Allocations: 27252)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:47:01 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+  Rendered shared/_header.html.erb (Duration: 1.6ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 71.5ms | Allocations: 23113)
+Completed 200 OK in 82ms (Views: 75.1ms | ActiveRecord: 0.0ms | Allocations: 27167)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:47:05 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_header.html.erb (Duration: 2.7ms | Allocations: 519)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2418)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 2652)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:48:07 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 196)
+  Rendered shared/_header.html.erb (Duration: 2.0ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 22921)
+Completed 200 OK in 78ms (Views: 71.5ms | ActiveRecord: 0.0ms | Allocations: 26975)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:49:58 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 199)
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 23141)
+Completed 200 OK in 77ms (Views: 70.7ms | ActiveRecord: 0.0ms | Allocations: 27195)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-25 14:51:41 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 199)
+  Rendered shared/_header.html.erb (Duration: 2.4ms | Allocations: 845)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 71.1ms | Allocations: 23098)
+Completed 200 OK in 80ms (Views: 74.5ms | ActiveRecord: 0.0ms | Allocations: 27152)
+
+
