@@ -4298,3 +4298,192 @@ Processing by UserSessionsController#new as HTML
 Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4784)
 
 
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:27:43 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 1.4ms | Allocations: 197)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.3ms | Allocations: 864)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 241)
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 23201)
+Completed 200 OK in 83ms (Views: 71.3ms | ActiveRecord: 0.0ms | Allocations: 27255)
+
+
+Started GET "/login" for 172.19.0.1 at 2024-05-26 17:27:44 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3306)
+  Rendered shared/_before_login_header.html.erb (Duration: 1.8ms | Allocations: 514)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 5527)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 6025)
+
+
+Started POST "/login" for 172.19.0.1 at 2024-05-26 17:27:52 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teriyaki@teri.com", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'teriyaki@teri.com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:7:in `create'
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 274ms (ActiveRecord: 86.2ms | Allocations: 22718)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:27:52 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+  Rendered shared/_header.html.erb (Duration: 1.6ms | Allocations: 752)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4871)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 5146)
+
+
+Started DELETE "/logout?_method=delete" for 172.19.0.1 at 2024-05-26 17:27:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/
+Completed 303 See Other in 9ms (ActiveRecord: 2.0ms | Allocations: 1295)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:27:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.0ms | Allocations: 532)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2414)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 2644)
+
+
+Started GET "/login" for 172.19.0.1 at 2024-05-26 17:27:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2332)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.0ms | Allocations: 517)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4551)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4780)
+
+
+Started GET "/users/new" for 172.19.0.1 at 2024-05-26 17:27:59 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1770)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.1ms | Allocations: 515)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3992)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 4529)
+
+
+Started POST "/users" for 172.19.0.1 at 2024-05-26 17:28:14 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"てりはる2", "email"=>"teriyaki2@teri.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teriyaki2@teri.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (8.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "てりはる2"], ["email", "teriyaki2@teri.com"], ["crypted_password", "$2a$10$at6LRLcm0QbRR8/G7jwFMe2ugEbzl5cDTqyExZ5zkcJ9RGwzOxiTO"], ["salt", "1ehYzCnKin4xiKKH8Gs4"], ["created_at", "2024-05-26 08:28:14.585169"], ["updated_at", "2024-05-26 08:28:14.585169"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 95ms (ActiveRecord: 15.4ms | Allocations: 4152)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:28:14 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_before_login_header.html.erb (Duration: 1.0ms | Allocations: 527)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2419)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2649)
+
+
+Started GET "/login" for 172.19.0.1 at 2024-05-26 17:28:16 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2344)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.6ms | Allocations: 514)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4559)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 4788)
+
+
+Started POST "/login" for 172.19.0.1 at 2024-05-26 17:28:28 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teriyaki2@teri.com", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'teriyaki2@teri.com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:7:in `create'
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 128ms (ActiveRecord: 2.6ms | Allocations: 964)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:28:28 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 535)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2863)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 3093)
+
+
+Started DELETE "/logout?_method=delete" for 172.19.0.1 at 2024-05-26 17:28:31 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/
+Completed 303 See Other in 8ms (ActiveRecord: 2.0ms | Allocations: 1282)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-26 17:28:31 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_before_login_header.html.erb (Duration: 1.9ms | Allocations: 527)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2413)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 2643)
+
+
+Started GET "/login" for 172.19.0.1 at 2024-05-26 17:28:31 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2328)
+  Rendered shared/_before_login_header.html.erb (Duration: 2.7ms | Allocations: 514)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4543)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
