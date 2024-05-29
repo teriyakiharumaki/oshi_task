@@ -1,21 +1,49 @@
 <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
     <h1 class="text-4xl font-bold mb-6 text-center">タスク一覧</h1>
-    <div class="flex justify-end mb-6">
+    <div class="flex justify-end mb-6 border-b border-gray-300 pb-2">
       <%= link_to "タスク作成", new_task_path, class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
     </div>
-    <div>
-      <% @tasks.each do |task| %>
-        <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
-          <div class="text-gray-700 w-600px text-left pr-4">
-            <%= task.title %>
+    <% if @tasks.any? %>
+      <div>
+        <% @tasks.each do |task| %>
+          <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+            <div class="text-gray-700 text-left pr-4 flex-1 text-lg">
+              <%= link_to task.title, task_path(task), class: 'hover:underline' %>
+            </div>
+            <div class="flex space-x-4 items-center text-lg">
+              <%= button_to "編集", edit_task_path(task), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_path(task), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "完了", done_path(task), method: :post, class: 'text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg ml-4' %>
+            </div>
           </div>
-          <div class="flex space-x-4">
-            <%= button_to "編集", edit_task_path(task), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
-            <%= button_to "削除", task_path(task), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center text-gray-500">タスクはありません。</p>
+    <% end %>
+  </div>
+</div>
+<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
+    <h1 class="text-4xl font-bold mb-6 text-center border-b border-gray-300 pb-2">完了済みタスク一覧</h1>
+    <% if @completed_tasks.any? %>
+      <div>
+        <% @completed_tasks.each do |task| %>
+          <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+            <div class="text-gray-700 text-left pr-4 flex-1 text-lg">
+              <%= link_to task.title, task_path(task), class: 'hover:underline' %>
+            </div>
+            <div class="flex space-x-4 items-center text-lg">
+              <%= button_to "編集", edit_task_path(task), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_path(task), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "未完了", done_path(task), method: :post, class: 'text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg ml-4' %>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center text-gray-500">完了済みのタスクはありません。</p>
+    <% end %>
   </div>
 </div>

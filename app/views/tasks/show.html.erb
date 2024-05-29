@@ -1,0 +1,27 @@
+<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
+    <h1 class="text-4xl font-bold mb-6 text-center">タスク詳細</h1>
+    <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+      <div class="text-gray-700 text-left pr-4">
+        <%= link_to "タスク一覧に戻る", tasks_path, class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+      </div>
+      <div class="flex space-x-4 items-center text-lg">
+        <%= button_to "編集", edit_task_path(@task), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+        <%= button_to "削除", task_path(@task), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+        <% if @task.done %>
+          <%= button_to "未完了に戻す", done_path(@task), method: :post, class: 'text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg ml-4' %>
+        <% else %>
+          <%= button_to "完了", done_path(@task), method: :post, class: 'text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg ml-4' %>
+        <% end %>
+      </div>
+    </div>
+    <p class="text-gray-700 text-4xl mb-4">タイトル： <%= @task.title %></p>
+    <p class="text-gray-700 text-2xl mb-2">メモ：</p>
+    <div class="border border-gray-300 pb-2">
+      <p class="text-gray-700 text-2xl mb-6"><%= @task.body %></p>
+    </div>
+    <div class='text-center'>
+      <%= link_to "タスク一覧に戻る", tasks_path, class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+    </div>
+  </div>
+</div>
