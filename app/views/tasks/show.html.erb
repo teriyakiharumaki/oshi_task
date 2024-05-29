@@ -1,7 +1,7 @@
-<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col mt-16">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
     <h1 class="text-4xl font-bold mb-6 text-center">タスク詳細</h1>
-    <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+    <div class="flex items-center justify-between mb-4 border-b border-black pb-2">
       <div class="text-gray-700 text-left pr-4">
         <%= link_to "タスク一覧に戻る", tasks_path, class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
       </div>
@@ -19,9 +19,6 @@
     <p class="text-gray-700 text-2xl mb-2">メモ：</p>
     <div class="border border-gray-300 pb-2">
       <p class="text-gray-700 text-2xl mb-6"><%= @task.body %></p>
-    </div>
-    <div class='text-center'>
-      <%= link_to "タスク一覧に戻る", tasks_path, class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
     </div>
   </div>
 </div>

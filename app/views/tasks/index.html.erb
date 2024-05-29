@@ -1,8 +1,8 @@
-<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
-    <h1 class="text-4xl font-bold mb-6 text-center">タスク一覧</h1>
-    <div class="flex justify-end mb-6 border-b border-gray-300 pb-2">
-      <%= link_to "タスク作成", new_task_path, class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+<div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col mt-16">
+  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3 mb-4">
+    <div class="flex justify-between items-center mb-6 border-b border-black pb-2">
+      <h1 class="text-4xl font-bold">タスク一覧</h1>
+      <%= link_to "タスク作成", new_task_path, class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ml-4' %>
     </div>
     <% if @tasks.any? %>
       <div>
@@ -24,9 +24,9 @@
     <% end %>
   </div>
 </div>
-<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+<div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
-    <h1 class="text-4xl font-bold mb-6 text-center border-b border-gray-300 pb-2">完了済みタスク一覧</h1>
+    <h1 class="text-4xl font-bold mb-6 border-b border-black pb-2">完了済みタスク一覧</h1>
     <% if @completed_tasks.any? %>
       <div>
         <% @completed_tasks.each do |task| %>
