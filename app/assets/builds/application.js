@@ -8239,6 +8239,16 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
+
+// app/javascript/flash_messages.js
+document.addEventListener("turbo:load", () => {
+  const flashMessage = document.querySelector(".fixed.top-28");
+  if (flashMessage) {
+    setTimeout(() => {
+      flashMessage.style.display = "none";
+    }, 5e3);
+  }
+});
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

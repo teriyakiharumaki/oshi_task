@@ -32088,3 +32088,341 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 44ms (Views: 26.7ms | ActiveRecord: 3.0ms | Allocations: 6342)
 
 
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:47:02 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTask Update (9.5ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:47:02.760930"], ["done", false], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 223ms (ActiveRecord: 107.0ms | Allocations: 40903)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:47:02 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", false]]
+  ↳ app/views/tasks/index.html.erb:9
+  [1m[36mTask Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2470)
+  Rendered shared/_header.html.erb (Duration: 2.5ms | Allocations: 845)
+  Rendered shared/_oshi_message.html.erb (Duration: 1.4ms | Allocations: 590)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 240)
+  Rendered layout layouts/application.html.erb (Duration: 343.3ms | Allocations: 43158)
+Completed 200 OK in 357ms (Views: 345.4ms | ActiveRecord: 3.0ms | Allocations: 48113)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:47:03 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", false]]
+  ↳ app/views/tasks/index.html.erb:9
+  [1m[36mTask Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1554)
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 551)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3822)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 3.2ms | Allocations: 5729)
+
+
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:47:04 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTask Update (5.5ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:47:04.749775"], ["done", true], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 32ms (ActiveRecord: 11.8ms | Allocations: 3731)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:47:04 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", true]]
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1559)
+  Rendered shared/_header.html.erb (Duration: 1.7ms | Allocations: 551)
+  Rendered shared/_oshi_message.html.erb (Duration: 1.0ms | Allocations: 441)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4333)
+Completed 200 OK in 23ms (Views: 12.1ms | ActiveRecord: 5.9ms | Allocations: 6254)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-29 10:50:46 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 1.0ms | Allocations: 104)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+  Rendered shared/_header.html.erb (Duration: 3.7ms | Allocations: 837)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 233)
+  Rendered layout layouts/application.html.erb (Duration: 154.2ms | Allocations: 20458)
+Completed 200 OK in 159ms (Views: 128.6ms | ActiveRecord: 28.2ms | Allocations: 21389)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:50:46 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", true]]
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 5371)
+  Rendered shared/_header.html.erb (Duration: 2.0ms | Allocations: 551)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 7644)
+Completed 200 OK in 52ms (Views: 17.7ms | ActiveRecord: 21.2ms | Allocations: 11617)
+
+
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:50:48 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTask Update (3.9ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:50:48.589646"], ["done", false], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 28ms (ActiveRecord: 10.5ms | Allocations: 3965)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:50:48 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", false]]
+  ↳ app/views/tasks/index.html.erb:9
+  [1m[36mTask Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1559)
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 551)
+  Rendered shared/_oshi_message.html.erb (Duration: 1.7ms | Allocations: 581)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4581)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 2.5ms | Allocations: 6534)
+
+
+Started GET "/" for 172.19.0.1 at 2024-05-29 10:50:59 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+  Rendered shared/_header.html.erb (Duration: 3.7ms | Allocations: 564)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 2921)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.3ms | Allocations: 3148)
+
+
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:51:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTask Update (3.1ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:51:57.909247"], ["done", true], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 68ms (ActiveRecord: 30.8ms | Allocations: 13936)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:51:57 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", true]]
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2183)
+  Rendered shared/_header.html.erb (Duration: 1.8ms | Allocations: 803)
+  Rendered shared/_oshi_message.html.erb (Duration: 1.2ms | Allocations: 580)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 233)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6222)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 2.4ms | Allocations: 8824)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:51:58 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", true]]
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1554)
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 551)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3822)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 2.4ms | Allocations: 5710)
+
+
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:51:59 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTask Update (3.7ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:51:59.281729"], ["done", false], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:46:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 24ms (ActiveRecord: 8.3ms | Allocations: 3727)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:51:59 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", false]]
+  ↳ app/views/tasks/index.html.erb:9
+  [1m[36mTask Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1559)
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 551)
+  Rendered shared/_oshi_message.html.erb (Duration: 0.8ms | Allocations: 441)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4332)
+Completed 200 OK in 19ms (Views: 11.4ms | ActiveRecord: 3.1ms | Allocations: 6249)
+
+
+Started POST "/tasks/26/done" for 172.19.0.1 at 2024-05-29 10:52:00 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#done as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:62:in `set_task'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTask Update (3.2ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = $1, "done" = $2 WHERE "tasks"."id" = $3[0m  [["updated_at", "2024-05-29 01:52:00.483206"], ["done", true], ["id", 26]]
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:49:in `done'
+Redirected to http://0.0.0.0:3000/tasks
+Completed 302 Found in 18ms (ActiveRecord: 7.3ms | Allocations: 3705)
+
+
+Started GET "/tasks" for 172.19.0.1 at 2024-05-29 10:52:00 +0900
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TasksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", false], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:7
+  [1m[36mTask Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2 LIMIT $3[0m  [["user_id", 1], ["done", true], ["LIMIT", 1]]
+  ↳ app/views/tasks/index.html.erb:30
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."done" = $2[0m  [["user_id", 1], ["done", true]]
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1555)
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 551)
+  Rendered shared/_oshi_message.html.erb (Duration: 0.9ms | Allocations: 441)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4329)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 2.2ms | Allocations: 6236)
+
+
