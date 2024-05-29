@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_user
-  before_action :set_task, only: %i[edit update destroy]
+  before_action :set_task, only: %i[show edit update destroy done]
 
   def index
-    @tasks = @user.tasks
+    @tasks = @user.tasks.where(done: false)
+    @completed_tasks = @user.tasks.where(done: true)
   end
 
   def new
@@ -24,7 +25,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path
+      redirect_to @task
     else
       render :edit
     end
@@ -32,6 +33,14 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    redirect_to tasks_path
+  end
+
+  def show
+  end
+
+  def done
+    @task.update(done: !@task.done)
     redirect_to tasks_path
   end
 
@@ -46,6 +55,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :body, :content)
+    params.require(:task).permit(:title, :body, :done)
   end
 end
