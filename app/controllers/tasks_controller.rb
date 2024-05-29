@@ -14,6 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = @user.tasks.new(task_params)
     if @task.save
+      flash[:notice] = "タスク作成完了！がんばって！"
       redirect_to tasks_path
     else
       render :new
@@ -33,6 +34,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    flash[:notice] = "タスク削除！次行こう！"
     redirect_to tasks_path
   end
 
@@ -40,7 +42,13 @@ class TasksController < ApplicationController
   end
 
   def done
-    @task.update(done: !@task.done)
+    if @task.done
+      @task.update(done: false)
+      flash[:notice] = "もう一回頑張ろう！"
+    else
+      @task.update(done: true)
+      flash[:notice] = "タスク完了だね！お疲れ様！"
+    end
     redirect_to tasks_path
   end
 
