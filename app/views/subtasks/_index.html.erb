@@ -1,0 +1,47 @@
+<div class="container flex flex-col px-5 py-12 items-center justify-center">
+  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full mb-4">
+    <div class="flex justify-between items-center mb-6 border-b border-black pb-2">
+      <h1 class="text-4xl font-bold">サブタスク一覧</h1>
+      <%= link_to "サブタスク作成", new_task_subtask_path(@task), class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ml-4' %>
+    </div>
+    <% if @subtasks.any? %>
+      <div>
+        <% @subtasks.each do |subtask| %>
+          <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+            <div class="text-gray-700 text-left pr-4 flex-1 text-lg">
+              <%= link_to subtask.title, task_subtask_path(@task, subtask), class: 'hover:underline' %>
+            </div>
+            <div class="flex space-x-4 items-center text-lg">
+              <%= button_to "編集", edit_task_subtask_path(@task, subtask), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "完了", done_task_subtask_path(@task, subtask), method: :post, class: 'text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg ml-4' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center text-gray-500">未完了のサブタスクはありません。</p>
+    <% end %>
+  </div>
+  <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full">
+    <h1 class="text-4xl font-bold mb-6 border-b border-black pb-2">完了済みサブタスク一覧</h1>
+    <% if @completed_subtasks.any? %>
+      <div>
+        <% @completed_subtasks.each do |subtask| %>
+          <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-2">
+            <div class="text-gray-700 text-left pr-4 flex-1 text-lg">
+              <%= link_to subtask.title, task_subtask_path(@task, subtask), class: 'hover:underline' %>
+            </div>
+            <div class="flex space-x-4 items-center text-lg">
+              <%= button_to "編集", edit_task_subtask_path(@task, subtask), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "未完了", done_task_subtask_path(@task, subtask), method: :post, class: 'text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg ml-4' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center text-gray-500">完了済みのサブタスクはありません。</p>
+    <% end %>
+  </div>
+</div>
