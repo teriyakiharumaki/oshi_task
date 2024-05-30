@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
   resources :users, only: %i[new create]
-  resources :tasks
+  resources :tasks do
+    resources :subtasks, only: %i[index show new create edit update destroy] do
+      post 'done', on: :member
+    end
+  end
   post '/tasks/:id/done' => 'tasks#done', as: 'done'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

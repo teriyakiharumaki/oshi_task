@@ -1,6 +1,5 @@
-class Task < ApplicationRecord
-  belongs_to :user
-  has_many :subtasks
+class Subtask < ApplicationRecord
+  belongs_to :task
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, presence: true

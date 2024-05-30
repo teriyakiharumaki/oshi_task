@@ -26,6 +26,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
+      flash[:notice] = "タスク更新完了！がんばろう！"
       redirect_to @task
     else
       render :edit
@@ -34,11 +35,13 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:notice] = "タスク削除！次行こう！"
+    flash[:notice] = "タスク削除完了！次行こう！"
     redirect_to tasks_path
   end
 
   def show
+    @subtasks = @task.subtasks.where(done: false)
+    @completed_subtasks = @task.subtasks.where(done: true)
   end
 
   def done
