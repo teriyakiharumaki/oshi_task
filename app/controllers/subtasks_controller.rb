@@ -8,6 +8,8 @@ class SubtasksController < ApplicationController
   end
 
   def show
+    @third_tasks = @subtask.third_tasks.where(done: false)
+    @completed_third_tasks = @subtask.third_tasks.where(done: true)
   end
 
   def new

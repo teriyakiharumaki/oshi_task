@@ -1,6 +1,5 @@
-class Task < ApplicationRecord
-  belongs_to :user
-  has_many :subtasks, dependent: :destroy
+class ThirdTask < ApplicationRecord
+  belongs_to :subtask
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, presence: true

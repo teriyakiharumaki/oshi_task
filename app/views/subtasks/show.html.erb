@@ -23,4 +23,5 @@
       <%= link_to "タスク詳細に戻る", task_path(@task), class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
     </div>
   </div>
+  <%= render 'third_tasks/index', subtask: @subtask, third_tasks: @third_tasks, completed_third_tasks: @completed_third_tasks %>
 </div>
