@@ -2,7 +2,7 @@
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full mb-4">
     <div class="flex justify-between items-center mb-6 border-b border-black pb-2">
       <h1 class="text-4xl font-bold">サブタスク一覧</h1>
-      <%= link_to "サブタスク作成", new_task_subtask_path(@task), class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ml-4' %>
+      <%= link_to "作成", new_task_subtask_path(@task), class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ml-4' %>
     </div>
     <% if @subtasks.any? %>
       <div>

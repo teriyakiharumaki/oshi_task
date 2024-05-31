@@ -9,7 +9,7 @@ class ThirdTasksController < ApplicationController
   def create
     @third_task = @subtask.third_tasks.new(third_task_params)
     if @third_task.save
-      flash[:notice] = "サードタスクが作成されました！"
+      flash[:notice] = "タスク作成したよ！がんばろ！"
       redirect_to task_subtask_path(@subtask.task, @subtask)
     else
       render :new
@@ -21,7 +21,7 @@ class ThirdTasksController < ApplicationController
 
   def update
     if @third_task.update(third_task_params)
-      flash[:notice] = "サードタスクが更新されました！"
+      flash[:notice] = "タスク更新したよ！がんばろ！"
       redirect_to task_subtask_path(@subtask.task, @subtask)
     else
       render :edit
@@ -30,7 +30,7 @@ class ThirdTasksController < ApplicationController
 
   def destroy
     @third_task.destroy
-    flash[:notice] = "サードタスクが削除されました！"
+    flash[:notice] = "タスクを削除したよ！"
     redirect_to task_subtask_path(@subtask.task, @subtask)
   end
 
@@ -40,10 +40,10 @@ class ThirdTasksController < ApplicationController
   def done
     if @third_task.done
       @third_task.update(done: false)
-      flash[:notice] = "サードタスクが未完了に戻りました！"
+      flash[:notice] = "もう一回頑張ろう！"
     else
       @third_task.update(done: true)
-      flash[:notice] = "サードタスクが完了しました！"
+      flash[:notice] = "タスク完了だね！"
     end
     redirect_to task_subtask_path(@subtask.task, @subtask)
   end

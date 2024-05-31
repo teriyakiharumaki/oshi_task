@@ -19,7 +19,7 @@ class SubtasksController < ApplicationController
   def create
     @subtask = @task.subtasks.new(subtask_params)
     if @subtask.save
-      flash[:notice] = "サブタスク作成したよ！がんばろ！"
+      flash[:notice] = "タスク作成したよ！がんばろ！"
       redirect_to task_path(@task)
     else
       render :new
@@ -31,7 +31,7 @@ class SubtasksController < ApplicationController
 
   def update
     if @subtask.update(subtask_params)
-      flash[:notice] = "サブタスクを更新したよ！がんばろ！"
+      flash[:notice] = "タスクを更新したよ！がんばろ！"
       redirect_to task_path(@task)
     else
       render :edit
@@ -40,7 +40,7 @@ class SubtasksController < ApplicationController
 
   def destroy
     @subtask.destroy
-    flash[:notice] = "サブタスクを削除したよ！"
+    flash[:notice] = "タスクを削除したよ！"
     redirect_to task_path(@task)
   end
 
@@ -50,7 +50,7 @@ class SubtasksController < ApplicationController
       flash[:notice] = "もう一回頑張ろう！"
     else
       @subtask.update(done: true)
-      flash[:notice] = "サブタスク完了だね！！"
+      flash[:notice] = "タスク完了だね！！"
     end
     redirect_to task_path(@task)
   end
