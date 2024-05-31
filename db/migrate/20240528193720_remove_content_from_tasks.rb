@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveContentFromTasks < ActiveRecord::Migration[7.1]
   def change
     remove_column :tasks, :content, :string

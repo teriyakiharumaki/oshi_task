@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
   before_action :set_user
   before_action :set_task, only: %i[show edit update destroy done]
@@ -7,26 +9,30 @@ class TasksController < ApplicationController
     @completed_tasks = @user.tasks.where(done: true)
   end
 
+  def show
+    @subtasks = @task.subtasks.where(done: false)
+    @completed_subtasks = @task.subtasks.where(done: true)
+  end
+
   def new
     @task = @user.tasks.new
   end
 
+  def edit; end
+
   def create
     @task = @user.tasks.new(task_params)
     if @task.save
-      flash[:notice] = "タスク作成完了！がんばって！"
+      flash[:notice] = 'タスク作成完了！がんばって！'
       redirect_to tasks_path
     else
       render :new
     end
   end
 
-  def edit
-  end
-
   def update
     if @task.update(task_params)
-      flash[:notice] = "タスク更新完了！がんばろう！"
+      flash[:notice] = 'タスク更新完了！がんばろう！'
       redirect_to @task
     else
       render :edit
@@ -35,22 +41,17 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:notice] = "タスク削除完了！次行こう！"
+    flash[:notice] = 'タスク削除完了！次行こう！'
     redirect_to tasks_path
-  end
-
-  def show
-    @subtasks = @task.subtasks.where(done: false)
-    @completed_subtasks = @task.subtasks.where(done: true)
   end
 
   def done
     if @task.done
       @task.update(done: false)
-      flash[:notice] = "もう一回頑張ろう！"
+      flash[:notice] = 'もう一回頑張ろう！'
     else
       @task.update(done: true)
-      flash[:notice] = "タスク完了だね！お疲れ様！"
+      flash[:notice] = 'タスク完了だね！お疲れ様！'
     end
     redirect_to tasks_path
   end

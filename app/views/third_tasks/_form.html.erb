@@ -1,4 +1,4 @@
-<%= form_with(model: [@subtask, @third_task], url: task_subtask_third_tasks_path(@subtask.task, @subtask), local: true) do |form| %>
+<%= form_with(model: [@subtask, @third_task], url: @third_task.new_record? ? task_subtask_third_tasks_path(@subtask.task, @subtask) : task_subtask_third_task_path(@subtask.task, @subtask, @third_task), local: true) do |form| %>
   <div class="relative mb-8 flex justify-center">
     <div class="w-full lg:w-3/4">
       <%= form.label :title, 'タイトル', class: 'leading-7 text-sm text-gray-600 mt-4' %>
@@ -12,10 +12,6 @@
     </div>
   </div>
   <div class="actions flex justify-center mb-6">
-    <% if @third_task.new_record? %>
-      <%= form.submit '作成', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
-    <% else %>
-      <%= form.submit '更新', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
-    <% end %>
+    <%= form.submit @third_task.new_record? ? '作成' : '更新', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
   </div>
 <% end %>

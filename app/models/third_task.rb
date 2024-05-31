@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ThirdTask < ApplicationRecord
   belongs_to :subtask
 
