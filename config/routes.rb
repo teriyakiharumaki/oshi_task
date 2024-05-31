@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :tasks do
     resources :subtasks, only: %i[index show new create edit update destroy] do
       post 'done', on: :member
+      resources :third_tasks, only: %i[index show new create edit update destroy] do
+        post 'done', on: :member
+      end
     end
   end
   post '/tasks/:id/done' => 'tasks#done', as: 'done'
