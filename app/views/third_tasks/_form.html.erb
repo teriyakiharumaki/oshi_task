@@ -13,9 +13,9 @@
   </div>
   <div class="actions flex justify-center mb-6">
     <% if @third_task.new_record? %>
-      <%= form.submit 'サードタスク作成', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+      <%= form.submit '作成', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
     <% else %>
-      <%= form.submit 'サードタスク更新', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+      <%= form.submit '更新', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
     <% end %>
   </div>
 <% end %>
