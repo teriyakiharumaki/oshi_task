@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateThirdTasks < ActiveRecord::Migration[7.1]
   def change
     create_table :third_tasks do |t|

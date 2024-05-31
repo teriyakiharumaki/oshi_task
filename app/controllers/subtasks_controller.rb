@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SubtasksController < ApplicationController
   before_action :set_task
   before_action :set_subtask, only: %i[show edit update destroy done]
@@ -16,22 +18,21 @@ class SubtasksController < ApplicationController
     @subtask = @task.subtasks.new
   end
 
+  def edit; end
+
   def create
     @subtask = @task.subtasks.new(subtask_params)
     if @subtask.save
-      flash[:notice] = "タスク作成したよ！がんばろ！"
+      flash[:notice] = 'タスク作成したよ！がんばろ！'
       redirect_to task_path(@task)
     else
       render :new
     end
   end
 
-  def edit
-  end
-
   def update
     if @subtask.update(subtask_params)
-      flash[:notice] = "タスクを更新したよ！がんばろ！"
+      flash[:notice] = 'タスクを更新したよ！がんばろ！'
       redirect_to task_path(@task)
     else
       render :edit
@@ -40,17 +41,17 @@ class SubtasksController < ApplicationController
 
   def destroy
     @subtask.destroy
-    flash[:notice] = "タスクを削除したよ！"
+    flash[:notice] = 'タスクを削除したよ！'
     redirect_to task_path(@task)
   end
 
   def done
     if @subtask.done
       @subtask.update(done: false)
-      flash[:notice] = "もう一回頑張ろう！"
+      flash[:notice] = 'もう一回頑張ろう！'
     else
       @subtask.update(done: true)
-      flash[:notice] = "タスク完了だね！！"
+      flash[:notice] = 'タスク完了だね！！'
     end
     redirect_to task_path(@task)
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Subtask < ApplicationRecord
   belongs_to :task
   has_many :third_tasks, dependent: :destroy
