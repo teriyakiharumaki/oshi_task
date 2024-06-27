@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'oshi_profiles/edit'
+  get 'oshi_profiles/update'
   root 'static_pages#top'
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create show]
+  resource :oshi_profile, only: %i[new create edit update destroy]
+  get '/mypage', to: 'users#show', as: 'mypage'
   post '/tasks/:id/done' => 'tasks#done', as: 'done'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

@@ -18,7 +18,10 @@
         <div :class="{'block': isOpen, 'hidden': !isOpen}" class="w-full lg:flex lg:items-center lg:w-auto">
           <ul class="flex flex-col lg:flex-row lg:space-x-4">
             <li class="relative group">
-              <%= link_to 'タスク一覧', tasks_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900'%>
+              <%= link_to 'マイページ', mypage_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900' %>
+            </li>
+            <li class="relative group">
+              <%= link_to 'タスク一覧', tasks_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900' %>
             </li>
             <li class="relative group">
               <%= link_to 'ログアウト', logout_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900', data: { turbo_method: :delete } %>

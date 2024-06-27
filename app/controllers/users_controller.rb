@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @oshi_profile = current_user.oshi_profile
+  end
+
   private
 
   def user_params
