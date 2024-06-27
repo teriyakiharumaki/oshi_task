@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,44 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_531_083_432) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_27_085153) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'subtasks', force: :cascade do |t|
-    t.string 'title', null: false
-    t.text 'body'
-    t.boolean 'done', default: false
-    t.integer 'task_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "oshi_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "personality"
+    t.string "generation"
+    t.string "gender"
+    t.string "pronoun"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar"
+    t.index ["user_id"], name: "index_oshi_profiles_on_user_id"
   end
 
-  create_table 'tasks', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'user_id', null: false
-    t.string 'title', null: false
-    t.text 'body'
-    t.boolean 'done', default: false
+  create_table "subtasks", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.boolean "done", default: false
+    t.integer "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'third_tasks', force: :cascade do |t|
-    t.string 'title', null: false
-    t.text 'body'
-    t.boolean 'done', default: false
-    t.integer 'subtask_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "tasks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.text "body"
+    t.boolean "done", default: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name', null: false
-    t.string 'email', null: false
-    t.string 'crypted_password'
-    t.string 'salt'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
+  create_table "third_tasks", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.boolean "done", default: false
+    t.integer "subtask_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "oshi_profiles", "users"
 end
