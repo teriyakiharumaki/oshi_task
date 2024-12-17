@@ -16,4 +16,7 @@ class User < ApplicationRecord
   has_one :oshi_profile, dependent: :destroy
   accepts_nested_attributes_for :oshi_profile
 
+  has_many :authentications, :dependent => :destroy
+  accepts_nested_attributes_for :authentications
+
 end
