@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_15_082608) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_17_034549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ai_comments", force: :cascade do |t|
+    t.text "task_created_comment"
+    t.text "task_updated_comment"
+    t.text "task_deleted_comment"
+    t.text "task_completed_comment"
+    t.text "sub_task_completed_comment"
+    t.text "task_incomplete_comment"
+    t.bigint "oshi_profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["oshi_profile_id"], name: "index_ai_comments_on_oshi_profile_id"
+  end
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -73,5 +86,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_15_082608) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "ai_comments", "oshi_profiles"
   add_foreign_key "oshi_profiles", "users"
 end

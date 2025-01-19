@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_created_comment: MyText
+  task_updated_comment: MyText
+  task_deleted_comment: MyText
+  task_completed_comment: MyText
+  sub_task_completed_comment: MyText
+  task_incomplete_comment: MyText
+  oshi_profile: one
+
+two:
+  task_created_comment: MyText
+  task_updated_comment: MyText
+  task_deleted_comment: MyText
+  task_completed_comment: MyText
+  sub_task_completed_comment: MyText
+  task_incomplete_comment: MyText
+  oshi_profile: two
