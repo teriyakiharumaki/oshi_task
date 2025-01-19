@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SubtasksController < ApplicationController
+  before_action :set_user
   before_action :set_task
   before_action :set_subtask, only: %i[show edit update destroy done]
 
@@ -23,7 +24,7 @@ class SubtasksController < ApplicationController
   def create
     @subtask = @task.subtasks.new(subtask_params)
     if @subtask.save
-      flash[:notice] = 'タスク作成したよ！がんばろ！'
+      flash[:notice] = ai_comment_message("task_created", @user.oshi_profile)
       redirect_to task_path(@task)
     else
       render :new
@@ -32,7 +33,7 @@ class SubtasksController < ApplicationController
 
   def update
     if @subtask.update(subtask_params)
-      flash[:notice] = 'タスクを更新したよ！がんばろ！'
+      flash[:notice] = ai_comment_message("task_updated", @user.oshi_profile)
       redirect_to task_path(@task)
     else
       render :edit
@@ -41,22 +42,26 @@ class SubtasksController < ApplicationController
 
   def destroy
     @subtask.destroy
-    flash[:notice] = 'タスクを削除したよ！'
+    flash[:notice] = ai_comment_message("task_deleted", @user.oshi_profile)
     redirect_to task_path(@task)
   end
 
   def done
     if @subtask.done
       @subtask.update(done: false)
-      flash[:notice] = 'もう一回頑張ろう！'
+      flash[:notice] = ai_comment_message("task_incomplete", @user.oshi_profile)
     else
       @subtask.update(done: true)
-      flash[:notice] = 'タスク完了だね！！'
+      flash[:notice] = ai_comment_message("sub_task_completed", @user.oshi_profile)
     end
     redirect_to task_path(@task)
   end
 
   private
+
+  def set_user
+    @user = User.find(session[:user_id])
+  end
 
   def set_task
     @task = Task.find(params[:task_id])
@@ -68,5 +73,24 @@ class SubtasksController < ApplicationController
 
   def subtask_params
     params.require(:subtask).permit(:title, :body, :done)
+  end
+
+  def ai_comment_message(comment_type, oshi_profile)
+    return "AIコメントが設定されていません。" unless oshi_profile&.ai_comment
+
+    case comment_type
+    when "task_created"
+      oshi_profile.ai_comment.task_created_comment
+    when "task_updated"
+      oshi_profile.ai_comment.task_updated_comment
+    when "task_deleted"
+      oshi_profile.ai_comment.task_deleted_comment
+    when "sub_task_completed"
+      oshi_profile.ai_comment.sub_task_completed_comment
+    when "task_incomplete"
+      oshi_profile.ai_comment.task_incomplete_comment
+    else
+      "該当するAIコメントが見つかりませんでした。"
+    end
   end
 end

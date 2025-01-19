@@ -11,25 +11,37 @@
       <div class="relative mb-8 flex justify-center">
         <div class="w-full lg:w-3/4">
           <%= form.label :personality, '推しの性格', class: 'leading-7 text-sm text-gray-600 mt-4' %>
-          <%= form.text_field :personality, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= form.select :personality, 
+            [['ツンデレ', 'ツンデレ'], ['真面目', '真面目'], ['不真面目', '不真面目'], ['熱血', '熱血'], ['クール', 'クール'], ['強気', '強気'], ['弱気', '弱気'], ['楽観的', '楽観的'], ['悲観的', '悲観的'], ['温和', '温和'], ['粗暴', '粗暴'], ['優しい', '優しい'], ['高飛車', '高飛車'], ['低姿勢', '低姿勢']], 
+            { prompt: '選択してください' }, 
+            class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
         </div>
       </div>
       <div class="relative mb-8 flex justify-center">
         <div class="w-full lg:w-3/4">
           <%= form.label :generation, '推しの年齢', class: 'leading-7 text-sm text-gray-600 mt-4' %>
-          <%= form.text_field :generation, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= form.select :generation, 
+            [['幼年（0～4歳くらい）', '幼年'], ['少年（5～14歳くらい）', '少年'], ['青年（15～24歳くらい）', '青年'], ['壮年（25～44歳くらい）', '壮年'], ['中年（45～64歳くらい）', '中年'], ['高年（65歳以上）', '高年']], 
+            { prompt: '選択してください' }, 
+            class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
         </div>
       </div>
       <div class="relative mb-8 flex justify-center">
         <div class="w-full lg:w-3/4">
           <%= form.label :gender, '推しの性別', class: 'leading-7 text-sm text-gray-600 mt-4' %>
-          <%= form.text_field :gender, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= form.select :gender, 
+            [['男性', '男性'], ['女性', '女性'], ['なし', 'なし']], 
+            { prompt: '選択してください' }, 
+            class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
         </div>
       </div>
       <div class="relative mb-8 flex justify-center">
         <div class="w-full lg:w-3/4">
           <%= form.label :pronoun, '推しの一人称', class: 'leading-7 text-sm text-gray-600 mt-4' %>
-          <%= form.text_field :pronoun, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= form.select :pronoun, 
+            [['私', '私'], ['僕', '僕'], ['俺', '俺'], ['自分', '自分'], ['俺様', '俺様'], ['わし', 'わし'], ['あたい', 'あたい'], ['あーし', 'あーし'], ['わい', 'わい'], ['うち', 'うち'], ['おいどん', 'おいどん'], ['拙者', '拙者'], ['わらわ', 'わらわ'], ['吾輩', '吾輩']], 
+            { prompt: '選択してください' }, 
+            class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
         </div>
       </div>
       <div class="relative mb-8 flex justify-center">

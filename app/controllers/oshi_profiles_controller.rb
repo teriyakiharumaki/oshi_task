@@ -9,17 +9,18 @@ class OshiProfilesController < ApplicationController
   def create
     @oshi_profile = current_user.build_oshi_profile(oshi_profile_params)
     if @oshi_profile.save
+      AiCommentGenerator.new.generate_and_save_all(@oshi_profile)
       redirect_to mypage_path, notice: 'プロフィールが設定されました。'
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @oshi_profile.update(oshi_profile_params)
+      AiCommentGenerator.new.generate_and_save_all(@oshi_profile)
       redirect_to mypage_path, notice: 'プロフィールが更新されました。'
     else
       render :edit
