@@ -1,6 +1,6 @@
 class AiCommentGenerator
-  def initialize(ai_client = OpenAI::Client.new(access_token: Rails.application.credentials.dig(:openai, :api_key)))
-    @ai_client = ai_client
+  def initialize(api_key = ENV['OPENAI_API_KEY'] || Rails.application.credentials.dig(:openai, :api_key))
+    @ai_client = OpenAI::Client.new(access_token: api_key)
   end
 
   def generate_and_save_all(oshi_profile)
