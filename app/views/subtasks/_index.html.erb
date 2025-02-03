@@ -13,7 +13,7 @@
             </div>
             <div class="flex space-x-4 items-center text-lg">
               <%= button_to "編集", edit_task_subtask_path(@task, subtask), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
-              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, data: { turbo_confirm: "削除しますか?" }, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
               <%= button_to "完了", done_task_subtask_path(@task, subtask), method: :post, class: 'text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg ml-4' %>
             </div>
           </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="flex space-x-4 items-center text-lg">
               <%= button_to "編集", edit_task_subtask_path(@task, subtask), method: :get, class: 'text-indigo-500 decoration-2 underline-offset-4 transition-colors hover:underline' %>
-              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
+              <%= button_to "削除", task_subtask_path(@task, subtask), method: :delete, data: { turbo_confirm: "削除しますか?" }, class: 'text-red-400 decoration-2 underline-offset-4 transition-colors hover:underline' %>
               <%= button_to "未完了", done_task_subtask_path(@task, subtask), method: :post, class: 'text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg ml-4' %>
             </div>
           </div>

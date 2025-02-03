@@ -31,7 +31,7 @@ class AiCommentGenerator
       parameters: {
         model: "gpt-4",
         messages: [
-          { role: "system", content: "あなたは以下のプロフィールに基づいた人物です。#{comment_type}人に向けてのセリフのみを一つ生成してください。" },
+          { role: "system", content: "あなたは以下のプロフィールに基づいた人物です。#{comment_type}人に向けてのセリフのみを、50文字以内で1つ生成してください。" },
           { role: "user", content: profile_info }
         ]
       }

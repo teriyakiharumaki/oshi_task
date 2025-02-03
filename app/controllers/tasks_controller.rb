@@ -23,7 +23,8 @@ class TasksController < ApplicationController
   def create
     @task = @user.tasks.new(task_params)
     if @task.save
-      flash[:notice] = ai_comment_message("task_created", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_created", @user.oshi_profile), image_url: image_url }
       redirect_to tasks_path
     else
       render :new
@@ -32,7 +33,8 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      flash[:notice] = ai_comment_message("task_updated", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_updated", @user.oshi_profile), image_url: image_url }
       redirect_to @task
     else
       render :edit
@@ -41,17 +43,20 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:notice] = ai_comment_message("task_deleted", @user.oshi_profile)
+    image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+    flash[:notice] = { message: ai_comment_message("task_deleted", @user.oshi_profile), image_url: image_url }
     redirect_to tasks_path
   end
 
   def done
     if @task.done
       @task.update(done: false)
-      flash[:notice] = ai_comment_message("task_incomplete", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_incomplete", @user.oshi_profile), image_url: image_url }
     else
       @task.update(done: true)
-      flash[:notice] = ai_comment_message("task_completed", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_completed", @user.oshi_profile), image_url: image_url }
     end
     redirect_to tasks_path
   end
