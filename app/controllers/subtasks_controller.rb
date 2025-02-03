@@ -24,7 +24,8 @@ class SubtasksController < ApplicationController
   def create
     @subtask = @task.subtasks.new(subtask_params)
     if @subtask.save
-      flash[:notice] = ai_comment_message("task_created", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_created", @user.oshi_profile), image_url: image_url }
       redirect_to task_path(@task)
     else
       render :new
@@ -33,7 +34,8 @@ class SubtasksController < ApplicationController
 
   def update
     if @subtask.update(subtask_params)
-      flash[:notice] = ai_comment_message("task_updated", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_updated", @user.oshi_profile), image_url: image_url }
       redirect_to task_path(@task)
     else
       render :edit
@@ -42,17 +44,20 @@ class SubtasksController < ApplicationController
 
   def destroy
     @subtask.destroy
-    flash[:notice] = ai_comment_message("task_deleted", @user.oshi_profile)
+    image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+    flash[:notice] = { message: ai_comment_message("task_deleted", @user.oshi_profile), image_url: image_url }
     redirect_to task_path(@task)
   end
 
   def done
     if @subtask.done
       @subtask.update(done: false)
-      flash[:notice] = ai_comment_message("task_incomplete", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("task_incomplete", @user.oshi_profile), image_url: image_url }
     else
       @subtask.update(done: true)
-      flash[:notice] = ai_comment_message("sub_task_completed", @user.oshi_profile)
+      image_url = @user.oshi_profile&.avatar&.url || ActionController::Base.helpers.asset_path('idol.png')
+      flash[:notice] = { message: ai_comment_message("sub_task_completed", @user.oshi_profile), image_url: image_url }
     end
     redirect_to task_path(@task)
   end
