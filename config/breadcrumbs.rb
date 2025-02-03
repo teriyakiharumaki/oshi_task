@@ -2,6 +2,21 @@ crumb :root do
   link "Home", root_path
 end
 
+crumb :mypage do
+  link "マイページ", mypage_path
+  parent :root
+end
+
+crumb :new_oshi_profile do
+  link "推しプロフィール設定", new_oshi_profile_path
+  parent :mypage
+end
+
+crumb :edit_oshi_profile do |oshi_profile|
+  link "推しプロフィール編集", edit_oshi_profile_path(oshi_profile)
+  parent :mypage
+end
+
 crumb :tasks do
   link "タスク一覧", tasks_path
   parent :root
