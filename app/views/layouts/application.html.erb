@@ -16,6 +16,7 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
+    <%= breadcrumbs separator: " &rsaquo; " %> 
     <%= render 'shared/oshi_message', message: flash[:notice] if flash[:notice].present? %>
     <main class="flex-grow container mx-auto p-4">
       <%= yield %>
