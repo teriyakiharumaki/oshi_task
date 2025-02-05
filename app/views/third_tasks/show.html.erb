@@ -16,10 +16,12 @@
       </div>
     </div>
     <p class="text-gray-700 text-4xl mb-4"><%= @third_task.title %></p>
-    <p class="text-gray-700 text-2xl mb-2">メモ：</p>
-    <div class="border border-gray-300 pb-2 mb-6">
-      <p class="text-gray-700 text-2xl mb-6"><%= @third_task.body %></p>
-    </div>
+    <% if @third_task.body.present? %>
+      <p class="text-gray-700 text-2xl mb-2">メモ：</p>
+      <div class="border border-gray-300 pb-2 mb-6">
+        <p class="text-gray-700 text-2xl mb-6"><%= @third_task.body %></p>
+      </div>
+    <% end %>
     <div class="text-gray-700 text-center pr-4">
       <%= link_to "サブタスク詳細に戻る", task_subtask_path(@subtask.task, @subtask), class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
     </div>

@@ -2,7 +2,7 @@
 <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
     <h1 class="text-4xl font-bold mb-6 text-center">推しプロフィール設定</h1>
-    <%= form_with(model: @oshi_profile, url: oshi_profile_path, local: true) do |form| %>
+    <%= form_with(model: @oshi_profile, url: oshi_profile_path, local: true, html: { id: 'newOshiProfileForm' }) do |form| %>
       <div class="relative mb-8 flex justify-center">
         <div class="w-full lg:w-3/4">
           <%= form.label :name, '推しの名前', class: 'leading-7 text-sm text-gray-600 mt-4' %>
@@ -22,7 +22,7 @@
         <div class="w-full lg:w-3/4">
           <%= form.label :generation, '推しの年齢', class: 'leading-7 text-sm text-gray-600 mt-4' %>
           <%= form.select :generation, 
-            [['幼年（0～4歳くらい）', '幼年'], ['少年（5～14歳くらい）', '少年'], ['青年（15～24歳くらい）', '青年'], ['壮年（25～44歳くらい）', '壮年'], ['中年（45～64歳くらい）', '中年'], ['高年（65歳以上）', '高年']], 
+            [['子供', '子供'], ['大人', '大人'], ['赤ちゃん', '赤ちゃん'], ['小学生', '小学生'], ['中学生', '中学生'], ['高校生', '高校生'], ['大学生', '大学生'], ['10代', '10代'], ['20代', '20代'], ['30代', '30代'], ['40代', '40代'], ['50代', '50代'], ['60代以上', '60代以上']], 
             { prompt: '選択してください' }, 
             class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
         </div>
@@ -54,6 +54,14 @@
       </div>
       <div class="actions flex justify-center mb-6">
         <%= form.submit '設定', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+      </div>
+      <div class="hidden fixed left-0 top-0 h-full w-full bg-gray-400/50 z-10" id="modalSelf">
+        <div class="modal-content bg-[#f4f4f4] my-[15%] mx-auto w-[500px] shadow-[0_2px_7px_rgba(0,0,0)]">
+          <div class="modal-body py-[15px] px-[25px] flex-col text-center">
+            <p>AIによるコメントを生成中...</p>
+            <div class="animate-spin h-8 w-8 bg-blue-300 rounded-xl mx-auto mt-4"></div>
+          </div>
+        </div>
       </div>
     <% end %>
     <div class='text-center'>

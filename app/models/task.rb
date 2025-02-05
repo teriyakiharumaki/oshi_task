@@ -5,5 +5,4 @@ class Task < ApplicationRecord
   has_many :subtasks, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 255 }
-  validates :body, presence: true
 end

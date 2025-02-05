@@ -3,6 +3,6 @@ document.addEventListener("turbo:load", () => {
   if (flashMessage) {
     setTimeout(() => {
       flashMessage.style.display = 'none';
-    }, 5000); // 5秒後にメッセージを非表示にする
+    }, 5000);
   }
 });
