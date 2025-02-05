@@ -8249,6 +8249,26 @@ document.addEventListener("turbo:load", () => {
     }, 5e3);
   }
 });
+
+// app/javascript/modal.js
+function modalOperation() {
+  const modal = document.getElementById("modalSelf");
+  const newForm = document.getElementById("newOshiProfileForm");
+  const editForm = document.getElementById("editOshiProfileForm");
+  if (newForm) {
+    newForm.addEventListener("submit", () => {
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+  }
+  if (editForm) {
+    editForm.addEventListener("submit", () => {
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+  }
+}
+window.addEventListener("turbo:load", modalOperation);
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:
