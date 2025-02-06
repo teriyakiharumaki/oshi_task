@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        email: "メールアドレス"
+      oshi_profile:
+        name: "推しの名前"
+    errors:
+      messages:
+        invalid: "%{attribute}が正しくありません。"
+        blank: "%{attribute}を入力してください。"
+        too_short: "%{attribute}は%{count}文字以上で入力してください。"
+        wrong_password_confirmation: "パスワードが確認用と一致していません。"

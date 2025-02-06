@@ -10,9 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user.email, params[:user][:password])
+      flash[:success] = "ログインに成功しました！"
       redirect_to tasks_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -7,24 +7,49 @@
           <div class="w-full lg:w-3/4">
             <%= f.label :name, '名前', class: 'leading-7 text-sm text-gray-600 mt-4' %>
             <%= f.text_field :name, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+            <% if @user.errors[:name].any? %>
+              <div class="text-red-500 text-sm mt-2">
+                <%= @user.errors[:name].first %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="relative mb-8 flex justify-center">
           <div class="w-full lg:w-3/4">
             <%= f.label :email, 'メールアドレス', class: 'leading-7 text-sm text-gray-600' %>
             <%= f.email_field :email, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+            <% if @user.errors[:email].any? %>
+              <div class="text-red-500 text-sm mt-2">
+                <%= @user.errors[:email].first %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="relative mb-8 flex justify-center">
           <div class="w-full lg:w-3/4">
             <%= f.label :password, 'パスワード', class: 'leading-7 text-sm text-gray-600' %>
             <%= f.password_field :password, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+            <p>※8文字以上</p>
+            <% if @user.errors[:password].any? %>
+              <div class="text-red-500 text-sm mt-2">
+                <% @user.errors[:password].each do |error| %>
+                  <p><%= error %></p>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="relative mb-8 flex justify-center">
           <div class="w-full lg:w-3/4">
             <%= f.label :password_confirmation, 'パスワード確認', class: 'leading-7 text-sm text-gray-600' %>
             <%= f.password_field :password_confirmation, class: 'w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out' %>
+            <% if @user.errors[:password_confirmation].any? %>
+              <div class="text-red-500 text-sm mt-2">
+                <% @user.errors[:password_confirmation].each do |error| %>
+                  <p><%= error %></p>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="actions flex justify-center mb-8">
