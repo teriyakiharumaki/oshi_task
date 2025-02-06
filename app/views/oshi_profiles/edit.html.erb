@@ -57,8 +57,11 @@
           <%= form.hidden_field :avatar_cache %>
         </div>
       </div>
-      <div class="actions flex justify-center mb-6">
+      <div class="actions flex justify-center">
         <%= form.submit '更新', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+      </div>
+      <div class="mb-6 px-4 flex justify-center">
+        <p class="text-gray-500 pl-4">更新には数分かかる場合があります。</p>
       </div>
       <div class="hidden fixed left-0 top-0 h-full w-full bg-gray-400/50 z-10" id="modalSelf">
         <div class="modal-content bg-[#f4f4f4] my-[15%] mx-auto w-[500px] shadow-[0_2px_7px_rgba(0,0,0)]">
