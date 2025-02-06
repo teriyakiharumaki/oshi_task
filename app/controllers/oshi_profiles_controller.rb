@@ -10,9 +10,10 @@ class OshiProfilesController < ApplicationController
     @oshi_profile = current_user.build_oshi_profile(oshi_profile_params)
     if @oshi_profile.save
       AiCommentGenerator.new.generate_and_save_all(@oshi_profile)
-      redirect_to mypage_path, notice: 'プロフィールが設定されました。'
+      flash[:success] = "推しプロフィールが設定されました！"
+      redirect_to mypage_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -21,17 +22,19 @@ class OshiProfilesController < ApplicationController
   def update
     if @oshi_profile.update(oshi_profile_params)
       AiCommentGenerator.new.generate_and_save_all(@oshi_profile)
-      redirect_to mypage_path, notice: 'プロフィールが更新されました。'
+      flash[:success] = "推しプロフィールが更新されました！"
+      redirect_to mypage_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     if @oshi_profile.destroy
-      redirect_to mypage_path, notice: 'プロフィールが削除されました。'
+      flash[:success] = "推しプロフィールを削除しました！"
+      redirect_to mypage_path
     else
-      redirect_to mypage_path, alert: 'プロフィールの削除に失敗しました。'
+      redirect_to mypage_path
     end
   end
 

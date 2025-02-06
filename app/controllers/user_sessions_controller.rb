@@ -9,9 +9,11 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
+      flash[:success] = "ログインに成功しました！"
       redirect_to tasks_path
     else
-      render :new
+      flash.now[:alert] = "メールアドレスまたはパスワードが正しくありません。"
+      render :new, status: :unprocessable_entity
     end
   end
 
