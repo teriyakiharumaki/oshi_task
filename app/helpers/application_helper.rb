@@ -9,14 +9,14 @@ module ApplicationHelper
       charset: 'utf-8',
       description: '推しTaskでは、タスクを達成するたびにAIによって生成された推しからの励ましの言葉を貰えます。',
       keywords: 'AI,タスク,タスク管理 ,推し, 推し活',
-      canonical: https://oshi-task-1.onrender.com,
+      canonical: 'https://oshi-task-1.onrender.com',
       separator: '|',
       og:{
         site_name: :site,
         title: :title,
         description: :description,
         type: 'website',
-        url: https://oshi-task-1.onrender.com,
+        url: 'https://oshi-task-1.onrender.com',
         image: image_url('ogp.png'),
         local: 'ja-JP'
       },
