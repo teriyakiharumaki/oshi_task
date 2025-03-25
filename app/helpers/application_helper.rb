@@ -23,6 +23,8 @@ module ApplicationHelper
       twitter: {
         card: 'summary_large_image',
         site: '@obvyamdrss',
+        title: 'タスクを達成すると、推しから励ましてもらえるサービス',
+        description: '推しTaskでは、タスクを達成するたびにAIによって生成された推しからの励ましの言葉を貰えます。',
         image: image_url('ogp.png')
       }
     }
