@@ -25,4 +25,7 @@ Rails.application.routes.draw do
   get '/terms', to: 'static_pages#terms', as: 'terms'
   get '/privacy', to: 'static_pages#privacy', as: 'privacy'
   get '/contact', to: 'static_pages#contact', as: 'contact'
+  get 'test/500', to: 'application#raise500'
+  get '*path', to: 'application#render404'
+  match '/500', to: 'application#render500', via: :all
 end
