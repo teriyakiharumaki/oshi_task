@@ -1,12 +1,17 @@
 <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
     <h1 class="text-4xl font-bold mb-6 text-center">推しTaskとは？</h1>
-    <div class="mb-6 px-4 flex justify-center">
-      <p class="text-gray-700 pl-4 text-xl">タスクを達成するたびに、推しから激励の言葉をもらえるタスク管理アプリです。</p>
+    <div class="mb-9 px-4 text-center">
+      <p class="text-xl text-gray-700 text-center leading-relaxed block sm:hidden">
+        タスクを達成するたびに、<br>
+        推しから褒めて貰える<br>
+        タスク管理サービスです。
+      </p>
+      <p class="text-xl text-gray-700 text-center leading-relaxed hidden sm:block">
+        タスクを達成するたびに、推しから褒めて貰えるタスク管理サービスです。
+      </p>
     </div>
-    <div class="px-4 flex justify-center">
-      <p class="text-gray-700 pl-4 text-xl">推しと一緒にタスクをこなしていきましょう！</p>
-    </div>
+    <h2 class="text-4xl font-bold text-center">利用方法</h2>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <section class="text-gray-600 body-font" x-data="{ step: 1 }">
       <div class="container px-5 py-6 mx-auto flex flex-wrap flex-col">
@@ -41,37 +46,89 @@
           </a>
         </div>
         <div x-show="step === 1" class="text-center">
-          <h1 class="text-2xl font-medium text-gray-900 mb-6">STEP 1: ログイン</h1>
+          <h1 class="text-2xl font-medium text-gray-900 mb-6">
+            STEP 1 <br class="block sm:hidden">
+            ログイン
+          </h1>
           <img class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[95%] max-w-6xl block mx-auto mb-6 object-cover object-center rounded" 
           alt="step1" src="<%= asset_path('STEP1.png') %>">
-          <p class="text-base text-xl">
+          <p class="text-base text-xl block sm:hidden">
+            <%= link_to "こちら", login_path, class: "text-indigo-500 hover:underline" %>から<br>
+            会員登録を行いましょう
+          </p>
+          <p class="text-base text-xl block sm:hidden">
+            （googleによる<br>
+            登録も可能です）
+          </p>
+          <p class="text-base text-xl hidden sm:block">
             <%= link_to "こちら", login_path, class: "text-indigo-500 hover:underline" %>から会員登録を行いましょう
           </p>
-          <p class="text-base text-xl">（googleによる登録も可能です）</p>
+          <p class="text-base text-xl hidden sm:block">（googleによる登録も可能です）</p>
         </div>
         <div x-show="step === 2" class="text-center">
-          <h1 class="text-2xl font-medium text-gray-900 mb-6">STEP 2: 推しプロフィール登録</h1>
+          <h1 class="text-2xl font-medium text-gray-900 mb-6">
+            STEP 2 <br class="block sm:hidden">
+            推しプロフィール登録
+          </h1>
           <img class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[95%] max-w-6xl block mx-auto mb-6 object-cover object-center rounded" 
           alt="step2" src="<%= asset_path('STEP2.png') %>">
-          <p class="text-base text-xl">マイページから推しの情報を登録しましょう！</p>
-          <p class="text-base text-xl">画像、名前、性格、年齢、性別、一人称の登録ができます！</p>
-          <p class="text-base text-xl">（設定時にAIによるコメントが生成されるため、数分かかります）</p>
+          <p class="text-base text-xl block sm:hidden">
+            マイページから<br>
+            推しの情報を<br>
+            登録しましょう！
+          </p>
+          <p class="text-base text-xl block sm:hidden">
+            画像、名前、性格、<br>
+            年齢、性別、一人称の<br>
+            登録ができます！
+          </p>
+          <p class="text-base text-xl block sm:hidden">
+            （登録時にAIが<br>
+            コメントを生成するため、<br>
+            数分かかります）
+          </p>
+          <p class="text-base text-xl hidden sm:block">マイページから推しの情報を登録しましょう！</p>
+          <p class="text-base text-xl hidden sm:block">画像、名前、性格、年齢、性別、一人称の登録ができます！</p>
+          <p class="text-base text-xl hidden sm:block">（登録時にAIがコメントを生成するため、数分かかります）</p>
         </div>
         <div x-show="step === 3" class="text-center">
-          <h1 class="text-2xl font-medium text-gray-900 mb-6">STEP 3: タスク登録</h1>
+          <h1 class="text-2xl font-medium text-gray-900 mb-6">
+            STEP 3 <br class="block sm:hidden">
+            タスク登録
+          </h1>
           <img class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[95%] max-w-6xl block mx-auto mb-6 object-cover object-center rounded" 
           alt="step3_1" src="<%= asset_path('STEP3_1.png') %>">
-          <p class="text-base text-xl mb-12">タスク一覧からタスクを登録し、こなしていきましょう！</p>
+          <p class="text-base text-xl mb-12 block sm:hidden">
+            タスクを登録し、<br>
+            こなしていきましょう！
+          </p>
+          <p class="text-base text-xl mb-12 hidden sm:block">タスクを登録し、こなしていきましょう！</p>
           <img class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[95%] max-w-6xl block mx-auto mb-6 object-cover object-center rounded" 
           alt="step3_2" src="<%= asset_path('STEP3_2.png') %>">
-          <p class="text-base text-xl">登録、完了するたびに推しからのメッセージがもらえる！</p>
+          <p class="text-base text-xl block sm:hidden">
+            登録、完了するたびに<br>
+            推しからメッセージ<br>
+            をもらえる！
+          </p>
+          <p class="text-base text-xl hidden sm:block">登録、完了するたびに推しからメッセージをもらえる！</p>
         </div>
         <div x-show="step === 4" class="text-center">
-          <h1 class="text-2xl font-medium text-gray-900 mb-6">STEP 4: サブ（サード）タスク登録</h1>
+          <h1 class="text-2xl font-medium text-gray-900 mb-6">
+            STEP 4 <br class="block sm:hidden">
+            サブタスク登録
+          </h1>
           <img class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[95%] max-w-6xl block mx-auto mb-6 object-cover object-center rounded" 
           alt="step4" src="<%= asset_path('STEP4.png') %>">
-          <p class="text-base text-xl">タスクごとにサブタスクを登録可能！</p>
-          <p class="text-base text-xl">さらに、サブタスクごとにもサードタスクを登録可能！</p>
+          <p class="text-base text-xl block sm:hidden">
+            タスクごとにサブタスクを<br>
+            登録可能！
+          </p>
+          <p class="text-base text-xl block sm:hidden">
+            さらに、サブタスクごとに<br>
+            サードタスクを登録可能！
+          </p>
+          <p class="text-base text-xl hidden sm:block">タスクごとにサブタスクを登録可能！</p>
+          <p class="text-base text-xl hidden sm:block">さらに、サブタスクごとにもサードタスクを登録可能！</p>
         </div>
       </div>
     </section>

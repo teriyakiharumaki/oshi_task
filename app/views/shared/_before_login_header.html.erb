@@ -6,22 +6,8 @@
           <%= image_tag 'OshiTask_logo2.png', class: 'h-16 w-auto' %>
         <% end %>
       </div>
-      <div class="flex items-center">
-        <div class="block lg:hidden">
-          <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" @click="isOpen = !isOpen">
-            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path v-if="!isOpen" d="M4 6h16M4 12h16M4 18h16"></path>
-              <path v-if="isOpen" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <div :class="{'block': isOpen, 'hidden': !isOpen}" class="w-full lg:flex lg:items-center lg:w-auto">
-          <ul class="flex flex-col lg:flex-row lg:space-x-4">
-            <li class="relative group">
-              <%= link_to 'ログイン', login_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900' %>
-            </li>
-          </ul>
-        </div>
+      <div>
+        <%= link_to 'ログイン', login_path, class: 'block lg:inline-block px-3 py-2 text-gray-700 hover:text-gray-900' %>
       </div>
     </div>
   </nav>
