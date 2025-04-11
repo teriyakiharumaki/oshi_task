@@ -1,10 +1,10 @@
 <% breadcrumb :mypage %>
 <% if flash[:success] %>
-  <div class="text-green-500 bg-green-100 p-4 rounded mb-4 text-center">
+  <div class="text-green-500 bg-green-100 p-4 rounded text-center">
     <p><%= flash[:success] %></p>
   </div>
 <% end %>
-<div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col mt-16">
+<div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col">
   <div class="bg-white shadow-md p-6 rounded-lg max-w-5xl w-full lg:w-2/3">
     <div class="hidden sm:flex justify-between mb-6 items-center border-b border-black pb-2">
       <h1 class="text-4xl font-bold">推しプロフィール</h1>
@@ -58,10 +58,10 @@
     <% else %>
       <p class="text-center text-gray-500 mb-6 block sm:hidden">
         推しプロフィールが<br>
-        設定されていません。
+        設定されていません
       </p>
       <p class="text-center text-gray-500 hidden sm:block">
-        推しプロフィールが設定されていません。
+        推しプロフィールが設定されていません
       </p>
     <% end %>
     <div class="flex justify-center mb-6">
