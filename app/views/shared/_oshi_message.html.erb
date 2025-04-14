@@ -1,9 +1,18 @@
 <% if flash[:notice].is_a?(Hash) %>
-  <div class="fixed top-28 left-1/2 transform -translate-x-1/2 flex items-center justify-center w-full px-4">
-    <div class="relative bg-white p-6 rounded-lg shadow-md max-w-2xl w-full text-xl border border-black">
-      <p class="text-gray-700"><%= flash[:notice]["message"] %></p>
-      <div class="absolute top-1/2 right-0 transform translate-x-24 -translate-y-1/2">
-        <%= image_tag flash[:notice]["image_url"], alt: 'プロフィール画像', class: 'w-24 h-24 rounded-full border border-black' %>
+  <div x-data="{ showMessage: true }" x-show="showMessage" class="fixed top-28 left-1/2 transform -translate-x-1/2 w-full px-4 z-50 flex justify-center">
+    <div class="relative flex flex-col items-center sm:block max-w-2xl w-full">
+      <div class="mb-4 sm:absolute sm:top-1/2 sm:right-0 sm:translate-x-24 sm:-translate-y-1/2">
+        <%= image_tag flash[:notice]["image_url"], alt: 'プロフィール画像',
+          class: 'w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-black' %>
+      </div>
+      <div class="relative bg-white p-6 rounded-lg shadow-md w-full text-xl border border-black text-center sm:text-left">
+        <button @click="showMessage = false"
+          class="absolute top-2 left-2 sm:left-2 sm:right-auto text-gray-500 hover:text-gray-700 text-xl focus:outline-none">
+          ×
+        </button>
+        <p class="text-gray-700 break-words">
+          <%= flash[:notice]["message"] %>
+        </p>
       </div>
     </div>
   </div>
