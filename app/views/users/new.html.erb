@@ -55,6 +55,13 @@
         <div class="actions flex justify-center mb-8">
           <%= f.submit '登録', class: 'text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
         </div>
+        <div class="actions flex justify-center mb-8">
+          <a href="<%= auth_at_provider_path(provider: :google) %>" 
+            class="text-black bg-white border border-black py-2 px-6 focus:outline-none hover:bg-gray-100 hover:text-black rounded-lg text-lg flex items-center gap-6">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" class="w-6 h-6" loading="lazy">
+            <span>Sign up with Google</span>
+          </a>
+        </div>
       <% end %>
       <div class="text-center">
         <%= link_to 'ログインページへ', login_path, class: 'text-gray-700 decoration-2 underline-offset-4 transition-colors hover:underline' %>
