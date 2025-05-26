@@ -87,4 +87,4 @@
 <br>
 
 ## 画面遷移図
-https://www.figma.com/design/jT5qXGIR3ucVM8cHhX61OO/Untitled?node-id=0%3A1&t=Hd5qDinych2vgcKM-1
+https://www.figma.com/design/jT5qXGIR3ucVM8cHhX61OO/%E6%8E%A8%E3%81%97Task_%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=Msjji2FCH3c49Fln-1
