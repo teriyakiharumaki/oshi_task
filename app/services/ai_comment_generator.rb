@@ -29,7 +29,7 @@ class AiCommentGenerator
 
     response = @ai_client.chat(
       parameters: {
-        model: "gpt-4",
+        model: "gpt-4.1",
         messages: [
           { role: "system", content: "あなたは以下のプロフィールに基づいた人物です。#{comment_type}人に向けてのセリフのみを、50文字以内で1つ生成してください。" },
           { role: "user", content: profile_info }
